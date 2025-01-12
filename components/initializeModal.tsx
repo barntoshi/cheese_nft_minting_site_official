@@ -156,72 +156,6 @@ const initializeGuards =
     });
   };
 
-const buyABeer = (umi: Umi, amount: string) => async () => {
-  amount = amount.replace(" SOL", "");
-
-  let builder = transactionBuilder()
-    .add(addMemo(umi, { memo: "🍻" }))
-    .add(
-      transferSol(umi, {
-        destination: publicKey("BeeryDvghgcKPTUw3N3bdFDFFWhTWdWHnsLuVebgsGSD"),
-        amount: sol(Number(amount)),
-      })
-    );
-  builder = builder.prepend(setComputeUnitPrice(umi, { microLamports: parseInt(process.env.NEXT_PUBLIC_MICROLAMPORTS ?? "1001") }));
-  const latestBlockhash = (await umi.rpc.getLatestBlockhash()).blockhash;
-  builder = builder.setBlockhash(latestBlockhash);
-  const requiredCu = await getRequiredCU(umi, builder.build(umi));
-  builder = builder.prepend(setComputeUnitLimit(umi, { units: requiredCu }));
-  try {
-    await builder.sendAndConfirm(umi, {
-      confirm: { commitment: "processed" },
-      send: {
-        skipPreflight: true,
-      },
-    });
-    createStandaloneToast().toast({
-      title: "Thank you! 🍻",
-      description: `Lets have a 🍺 together!`,
-      status: "success",
-      duration: 9000,
-      isClosable: true,
-    });
-  } catch (e) {
-    console.error(e);
-  }
-};
-
-function BuyABeerInput({
-  value,
-  setValue,
-}: {
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-}) {
-  const format = (val: string) => val + " SOL";
-  const parse = (val: string) => val.replace(/^\$/, "");
-
-  return (
-    <>
-      <NumberInput
-        mr="2rem"
-        value={format(value)}
-        onChange={(valueString) => setValue(parse(valueString))}
-        step={0.5}
-        precision={2}
-        keepWithinRange={true}
-        min={0}
-      >
-        <NumberInputField />
-        <NumberInputStepper>
-          <NumberIncrementStepper />
-          <NumberDecrementStepper />
-        </NumberInputStepper>
-      </NumberInput>
-    </>
-  );
-}
-
 type Props = {
   umi: Umi;
   candyMachine: CandyMachine;
@@ -284,10 +218,6 @@ export const InitializeModal = ({ umi, candyMachine, candyGuard }: Props) => {
             Initialize Guards
           </Button>
           <Text>Required for some guards</Text>
-        </HStack>
-        <HStack>
-          <BuyABeerInput value={amount} setValue={setAmount} />
-          <Button onClick={buyABeer(umi, amount)}>Buy me a Beer 🍻</Button>
         </HStack>
         {rootElements.length > 0 && (
           <Text fontWeight={"bold"}>Merkle trees for your allowlist.tsx:</Text>

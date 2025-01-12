@@ -21,7 +21,7 @@ interface TraitsProps {
 const Trait = ({ heading, description }: TraitProps) => {
   return (
     <Box
-      backgroundColor={"#ebebeb"}
+      background={"orange.500"}
       borderRadius={"5px"}
       width={"120px"}
       minHeight={"50px"}
@@ -84,7 +84,7 @@ export default function Card({
         backgroundSize="cover"
         backgroundImage={`url(${image})`}
       />
-      <Text fontWeight={"semibold"} marginTop={"15px"}>
+      <Text fontSize={"2xl"} fontWeight={"semibold"} marginTop={"15px"}>
         {metadata.name}
       </Text>
       <Text>{metadata.description}</Text>
@@ -108,7 +108,7 @@ export const ShowNft = ({ nfts }: Props) => {
     <AccordionItem key={nft.mint + "Accordion"}>
       <h2>
         <AccordionButton>
-          <Box as="span" flex="1" textAlign="left">
+          <Box fontSize={"3xl"} as="span" flex="1" textAlign="left">
             {nft.offChainMetadata?.name}
           </Box>
           <AccordionIcon />

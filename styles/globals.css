@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+    --font-sans: 'Single Day', cursive; /* <-- using a new variable here */
 
     --accent-rgb: 52, 211, 153;
     --darker-accent-rgb: 0, 204, 150;
@@ -42,11 +46,13 @@
 
 html,
 body {
+  font-family: var(--font-sans);
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 body {
+  font-family: var(--font-sans);
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }

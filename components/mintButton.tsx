@@ -131,14 +131,6 @@ const mintClick = async (
     return;
   }
 
-  let buyBeer = true;
-  console.log("buyBeer",process.env.NEXT_PUBLIC_BUYMARKBEER )
-
-  if (process.env.NEXT_PUBLIC_BUYMARKBEER  === "false") {
-    buyBeer = false;
-    console.log("The Creator does not want to pay for MarkSackerbergs beer 😒");
-  }
-
   try {
     //find the guard by guardToUse.label and set minting to true
     const guardIndex = guardList.findIndex((g) => g.label === guardToUse.label);
@@ -214,8 +206,7 @@ const mintClick = async (
       mintArgs,
       tables,
       latestBlockhash,
-      1_400_000,
-      buyBeer
+      1_400_000
     );
     const requiredCu = await getRequiredCU(umi, txForSimulation);
 
@@ -231,8 +222,7 @@ const mintClick = async (
         mintArgs,
         tables,
         latestBlockhash,
-        requiredCu,
-        buyBeer
+        requiredCu
       );
       console.log(transaction)
       mintTxs.push(transaction);
@@ -543,7 +533,7 @@ export function ButtonList({
     <Box key={index} marginTop={"20px"}>
       <Divider my="10px" />
       <HStack>
-        <Heading size="xs" textTransform="uppercase">
+        <Heading size="lg" textTransform="uppercase">
           {buttonGuard.header}
         </Heading>
         <Flex justifyContent="flex-end" marginLeft="auto">
@@ -580,7 +570,7 @@ export function ButtonList({
         </Flex>
       </HStack>
       <SimpleGrid columns={2} spacing={5}>
-        <Text pt="2" fontSize="sm">
+        <Text pt="2" fontSize="2xl" color="#fff">
           {buttonGuard.mintText}
         </Text>
         <VStack>
@@ -589,7 +579,7 @@ export function ButtonList({
               value={numberInputValues[buttonGuard.label] || 1}
               min={1}
               max={buttonGuard.maxAmount < 1 ? 1 : buttonGuard.maxAmount}
-              size="sm"
+              size="lg"
               isDisabled={!buttonGuard.allowed}
               onChange={(valueAsString, valueAsNumber) =>
                 handleNumberInputChange(buttonGuard.label, valueAsNumber)
@@ -622,8 +612,10 @@ export function ButtonList({
                 )
               }
               key={buttonGuard.label}
-              size="sm"
-              backgroundColor="teal.100"
+              size="lg"
+              color="#ffffff"
+              bg="orange.500"
+              borderRadius={"10"}
               isDisabled={!buttonGuard.allowed}
               isLoading={
                 guardList.find((elem) => elem.label === buttonGuard.label)

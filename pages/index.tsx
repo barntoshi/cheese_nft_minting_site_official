@@ -17,6 +17,7 @@ import { ShowNft } from "../components/showNft";
 import { InitializeModal } from "../components/initializeModal";
 import { image, headerText } from "../settings";
 import { useSolanaTime } from "@/utils/SolanaTimeContext";
+import { CheeseHeader } from "../components/cheeseHeader";
 
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -203,22 +204,23 @@ export default function Home() {
         <style jsx global>
           {`
       body {
-          background: #2d3748; 
+          background: url("/bg.png") no-repeat center center;
+          background-size: cover;
        }
    `}
         </style>
-        <Card>
+        <Card bg="rgb(253, 168, 10)" borderRadius={"25"}>
           <CardHeader>
             <Flex minWidth='max-content' alignItems='center' gap='2'>
               <Box>
-                <Heading size='md'>{headerText}</Heading>
+                <Heading color={"#ffffff"} size='lg'>{headerText}</Heading>
               </Box>
               {loading ? (<></>) : (
                 <Flex justifyContent="flex-end" marginLeft="auto">
-                  <Box background={"teal.100"} borderRadius={"5px"} minWidth={"50px"} minHeight={"50px"} p={2} >
+                  <Box background={"orange.500"} borderRadius={"5px"} minWidth={"50px"} minHeight={"50px"} p={2} >
                     <VStack >
-                      <Text fontSize={"sm"}>Available NFTs:</Text>
-                      <Text fontWeight={"semibold"}>{Number(candyMachine?.data.itemsAvailable) - Number(candyMachine?.itemsRedeemed)}/{Number(candyMachine?.data.itemsAvailable)}</Text>
+                      <Text color={"#ffffff"} fontSize={"sm"}>Available NFTs:</Text>
+                      <Text color={"#ffffff"} fontWeight={"semibold"}>{Number(candyMachine?.data.itemsAvailable) - Number(candyMachine?.itemsRedeemed)}/{Number(candyMachine?.data.itemsAvailable)}</Text>
                     </VStack>
                   </Box>
                 </Flex>
@@ -226,15 +228,16 @@ export default function Home() {
             </Flex>
           </CardHeader>
 
-          <CardBody>
+          <CardBody color={"#ffffff"}>
             <Center>
               <Box
                 rounded={'lg'}
                 mt={-12}
                 pos={'relative'}>
                 <Image
+                  marginTop={"30"}
                   rounded={'lg'}
-                  height={230}
+                  height={200}
                   objectFit={'cover'}
                   alt={"project Image"}
                   src={image}
@@ -268,9 +271,9 @@ export default function Home() {
         </Card >
         {umi.identity.publicKey === candyMachine?.authority ? (
           <>
-            <Center>
+            {/* <Center>
               <Button backgroundColor={"red.200"} marginTop={"10"} onClick={onInitializerOpen}>Initialize Everything!</Button>
-            </Center>
+            </Center> */}
             <Modal isOpen={isInitializerOpen} onClose={onInitializerClose}>
               <ModalOverlay />
               <ModalContent maxW="600px">
@@ -289,8 +292,8 @@ export default function Home() {
 
         <Modal isOpen={isShowNftOpen} onClose={onShowNftClose}>
           <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Your minted NFT:</ModalHeader>
+          <ModalContent background={"orange.400"} borderRadius={"5px"}>
+            <ModalHeader fontSize={"3xl"} >Your minted NFT:</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <ShowNft nfts={mintsCreated} />
@@ -304,7 +307,8 @@ export default function Home() {
   return (
     <main>
       <div className={styles.wallet}>
-        <WalletMultiButtonDynamic />
+        {/* <WalletMultiButtonDynamic /> */}
+        <CheeseHeader />
       </div>
 
       <div className={styles.center}>

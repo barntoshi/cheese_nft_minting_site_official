@@ -1,3 +1,4 @@
+import { NewTimer } from "./newTimer";
 import {
   CandyGuard,
   CandyMachine,
@@ -472,6 +473,7 @@ export function ButtonList({
   onOpen,
   setCheckEligibility,
 }: Props): JSX.Element {
+
   const solanaTime = useSolanaTime();
   const [numberInputValues, setNumberInputValues] = useState<{
     [label: string]: number;
@@ -512,7 +514,7 @@ export function ButtonList({
         endTime = group.guards.endDate.value.date;
       }
     }
-
+    console.log("st:", startTime)
     let buttonElement: GuardButtonList = {
       label: guard ? guard.label : "default",
       allowed: guard.allowed,
@@ -537,36 +539,13 @@ export function ButtonList({
           {buttonGuard.header}
         </Heading>
         <Flex justifyContent="flex-end" marginLeft="auto">
-          {buttonGuard.endTime > createBigInt(0) &&
-            buttonGuard.endTime - solanaTime > createBigInt(0) &&
-            (!buttonGuard.startTime ||
-              buttonGuard.startTime - solanaTime <= createBigInt(0)) && (
-              <>
-                <Text fontSize="sm" marginRight={"2"}>
-                  Ending in:{" "}
-                </Text>
-                <Timer
-                  toTime={buttonGuard.endTime}
-                  solanaTime={solanaTime}
-                  setCheckEligibility={setCheckEligibility}
-                />
-              </>
-            )}
-          {buttonGuard.startTime > createBigInt(0) &&
-            buttonGuard.startTime - solanaTime > createBigInt(0) &&
-            (!buttonGuard.endTime ||
-              solanaTime - buttonGuard.endTime <= createBigInt(0)) && (
-              <>
-                <Text fontSize="sm" marginRight={"2"}>
-                  Starting in:{" "}
-                </Text>
-                <Timer
-                  toTime={buttonGuard.startTime}
-                  solanaTime={solanaTime}
-                  setCheckEligibility={setCheckEligibility}
-                />
-              </>
-            )}
+        {(createBigInt(1736722800) - solanaTime) > 0 ? (
+          <NewTimer
+            solanaTime={solanaTime}
+            toTime={createBigInt(1736722800)}
+            setCheckEligibility={setCheckEligibility}
+          />
+        ) : (<></>)}
         </Flex>
       </HStack>
       <SimpleGrid columns={2} spacing={5}>

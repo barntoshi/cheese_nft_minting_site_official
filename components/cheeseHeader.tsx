@@ -30,6 +30,7 @@ export function CheeseHeader() {
         maxW="1000"    // width container
         mx="auto"        // center horizontally
         align="center"
+        direction={{ base: "column", md: "row" }}
       >
         {/* Left side: Logo */}
         <Box>
@@ -45,7 +46,7 @@ export function CheeseHeader() {
         {/* Center: Navigation */}
         <Flex
           as="nav"
-          ml={8}
+          ml={{ base: 0, md: 8 }}
           gap={navGap}
           fontFamily="'Single Day', cursive"   // or any custom font you use
           fontWeight="bold"
@@ -60,8 +61,7 @@ export function CheeseHeader() {
         <Spacer />
 
         {/* Right side: Connect Wallet Button */}
-        <Box>
-          {/* If you’re using the “Dynamic” version: <WalletMultiButtonDynamic /> */}
+        <Box mt={{ base: 4, md: 0 }}>
           <WalletMultiButtonDynamic />
         </Box>
       </Flex>

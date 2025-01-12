@@ -206,18 +206,36 @@ export default function Home() {
       body {
           background: url("/bg.png") no-repeat center center;
           background-size: cover;
+          background-color: rgb(231, 182, 77);
        }
    `}
         </style>
         <Card bg="rgb(253, 168, 10)" borderRadius={"25"}>
           <CardHeader>
-            <Flex minWidth='max-content' alignItems='center' gap='2'>
-              <Box>
+            <Flex 
+            minWidth='max-content'
+            alignItems='center' 
+            gap='2'
+            direction={{ base: "column", md: "row" }}
+            justifyContent={{ base: "center", md: "space-between" }}
+            >
+              <Box textAlign={{ base: "center", md: "left" }}>
                 <Heading color={"#ffffff"} size='lg'>{headerText}</Heading>
               </Box>
               {loading ? (<></>) : (
-                <Flex justifyContent="flex-end" marginLeft="auto">
-                  <Box background={"orange.500"} borderRadius={"5px"} minWidth={"50px"} minHeight={"50px"} p={2} >
+                <Flex
+                justifyContent={{ base: "center", md: "flex-end" }}
+                marginLeft={{ base: 0, md: "auto" }}
+                >
+                  <Box 
+                  bg="orange.500"
+                  borderRadius="5px"
+                  px={4}
+                  py={2}
+                  mt={{ base: 2, md: 0 }}
+                  // center text on mobile
+                  textAlign={{ base: "center", md: "right" }}
+                  >
                     <VStack >
                       <Text color={"#ffffff"} fontSize={"sm"}>Available NFTs:</Text>
                       <Text color={"#ffffff"} fontWeight={"semibold"}>{Number(candyMachine?.data.itemsAvailable) - Number(candyMachine?.itemsRedeemed)}/{Number(candyMachine?.data.itemsAvailable)}</Text>

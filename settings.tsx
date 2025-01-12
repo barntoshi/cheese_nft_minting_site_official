@@ -11,4 +11,4 @@ export const mintText = [
 export const image = "/collection.png";
 
 //website title
-export const headerText = "Mint an Official Cheese NFT";
+export const headerText = "Mint Official Cheese NFTs";

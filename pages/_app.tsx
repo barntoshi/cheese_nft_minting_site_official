@@ -10,7 +10,24 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { ChakraProvider } from '@chakra-ui/react'
 import { image, headerText } from 'settings'
 import { SolanaTimeProvider } from "@/utils/SolanaTimeContext";
-import { theme } from './theme'
+
+import { extendTheme } from '@chakra-ui/react';
+
+const theme = extendTheme({
+    fonts: {
+      heading: `'Single Day', cursive`,
+      body: `'Single Day', cursive`,
+    },
+    styles: {
+      global: {
+        // This applies to <body> text (and inherited by most text elements)
+        body: {
+          textShadow: '0 4px 10px rgba(0, 0, 0, 0.5)',
+          color: "white"
+        },
+      },
+    },
+  });
 
 export default function App({ Component, pageProps }: AppProps) {
   let network = WalletAdapterNetwork.Devnet;

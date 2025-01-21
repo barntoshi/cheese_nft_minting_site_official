@@ -255,7 +255,7 @@ export default function Home() {
                 <Image
                   marginTop={"30"}
                   rounded={'lg'}
-                  height={200}
+                  height={250}
                   objectFit={'cover'}
                   alt={"project Image"}
                   src={image}
@@ -289,9 +289,9 @@ export default function Home() {
         </Card >
         {umi.identity.publicKey === candyMachine?.authority ? (
           <>
-            {/* <Center>
+            <Center>
               <Button backgroundColor={"red.200"} marginTop={"10"} onClick={onInitializerOpen}>Initialize Everything!</Button>
-            </Center> */}
+            </Center>
             <Modal isOpen={isInitializerOpen} onClose={onInitializerClose}>
               <ModalOverlay />
               <ModalContent maxW="600px">
@@ -305,7 +305,20 @@ export default function Home() {
 
           </>)
           :
-          (<></>)
+          (<>
+            <br></br>
+            <Center >
+              <Text fontWeight="bold" fontSize={"xl"} backgroundColor={"blackAlpha.400"}> A 5% royalty on NFT resales applies and supports Cheese. </Text>
+            </Center>
+            <br></br>
+            <Center fontSize={"sm"}>
+              <Text backgroundColor={"blackAlpha.400"}> Built by our friendly Cheese Engineers and Designers with Metaplex Candy Machine. </Text>
+            </Center>
+            <br></br>
+            <Center >
+              <Text backgroundColor={"blackAlpha.400"}> NO REFUNDS. </Text>
+            </Center>
+          </>)
         }
 
         <Modal isOpen={isShowNftOpen} onClose={onShowNftClose}>

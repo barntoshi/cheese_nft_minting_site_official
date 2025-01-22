@@ -4,7 +4,7 @@ import { Flex, Box, Image, Link, Spacer, useBreakpointValue } from "@chakra-ui/r
 // or import { WalletMultiButtonDynamic } from "...";
 // (depending on how you're importing it)
 import dynamic from "next/dynamic";
-
+import GoogleAnalytics from "./gA";
 const WalletMultiButtonDynamic = dynamic(
     async () =>
       (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
@@ -25,6 +25,7 @@ export function CheeseHeader() {
       marginTop={"-10"}
       marginBottom={"-100"}
     >
+      <GoogleAnalytics />
       <Flex
         maxW="1000"    // width container
         mx="auto"        // center horizontally

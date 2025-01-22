@@ -23,6 +23,7 @@
     "@metaplex-foundation/umi-uploader-nft-storage": "^0.9.1",
     "@metaplex-foundation/umi-web3js-adapters": "^0.9.1",
     "@next/font": "13.1.6",
+    "@next/third-parties": "^15.1.6",
     "@solana/wallet-adapter-base": "^0.9.22",
     "@solana/wallet-adapter-react": "^0.15.32",
     "@solana/wallet-adapter-react-ui": "^0.9.31",

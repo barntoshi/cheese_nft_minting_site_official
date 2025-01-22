@@ -210,7 +210,7 @@ export default function Home() {
         height: 100%;
       }
       body {
-          background: url("/bg.png") no-repeat center center;
+          background: url("/bg3.jpg") no-repeat center center;
           background-size: cover;
           background-color: rgb(231, 182, 77);
        }

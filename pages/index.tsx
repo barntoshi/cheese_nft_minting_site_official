@@ -18,7 +18,7 @@ import { InitializeModal } from "../components/initializeModal";
 import { image, headerText } from "../settings";
 import { useSolanaTime } from "@/utils/SolanaTimeContext";
 import { CheeseHeader } from "../components/cheeseHeader";
-
+import { Link } from "@chakra-ui/react";
 const WalletMultiButtonDynamic = dynamic(
   async () =>
     (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
@@ -309,6 +309,10 @@ export default function Home() {
             <br></br>
             <Center >
               <Text fontWeight="bold" fontSize={"xl"} backgroundColor={"blackAlpha.400"}> A 5% royalty on NFT resales applies and supports Cheese. </Text>
+            </Center>
+            <br></br>
+            <Center>
+                <Link backgroundColor={"blackAlpha.400"} href="https://www.solana.fm/address/4Nxcwgrs4Dm2FTHpX3F1RheFb3uetzxpayZjVaHYyE84?cluster=devnet-alpha">Click to Explore Candy Machine</Link>
             </Center>
             <br></br>
             <Center fontSize={"sm"}>

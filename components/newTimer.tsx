@@ -58,7 +58,7 @@ export function NewTimer({ solanaTime, toTime, setCheckEligibility }: NewTimerPr
   // but here we'll do an example that collapses if days=0, etc.
   if (days > BigInt(0)) {
     return (
-      <Text fontSize="xl" fontWeight="bold">
+      <Text fontSize={{base: 'xs', md: 'lg'}} fontWeight="bold">
         Starting in: {days.toString()}d {hours.toString()}h {minutes.toString()}m {seconds.toString()}s
       </Text>
     );
@@ -66,7 +66,7 @@ export function NewTimer({ solanaTime, toTime, setCheckEligibility }: NewTimerPr
 
   if (hours > BigInt(0)) {
     return (
-      <Text fontSize="xl" fontWeight="bold">
+      <Text fontSize={{base: 'xs', md: 'lg'}} fontWeight="bold">
         Starting in: {hours.toString()}h {minutes.toString()}m {seconds.toString()}s
       </Text>
     );
@@ -74,14 +74,14 @@ export function NewTimer({ solanaTime, toTime, setCheckEligibility }: NewTimerPr
 
   if (minutes > BigInt(0)) {
     return (
-      <Text fontSize="xl" fontWeight="bold">
+      <Text fontSize={{base: 'xs', md: 'lg'}} fontWeight="bold">
         Starting in: {minutes.toString()}m {seconds.toString()}s
       </Text>
     );
   }
   // If we’re down to minutes and seconds:
   return (
-    <Text fontSize="xl" fontWeight="bold">
+    <Text fontSize={{base: 'xs', md: 'lg'}} fontWeight="bold">
       Starting in: {seconds.toString()}s
     </Text>
   );

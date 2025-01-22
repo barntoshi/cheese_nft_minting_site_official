@@ -203,6 +203,12 @@ export default function Home() {
       <>
         <style jsx global>
           {`
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
       body {
           background: url("/bg.png") no-repeat center center;
           background-size: cover;
@@ -220,7 +226,7 @@ export default function Home() {
             justifyContent={{ base: "center", md: "space-between" }}
             >
               <Box textAlign={{ base: "center", md: "left" }}>
-                <Heading color={"#ffffff"} size='lg'>{headerText}</Heading>
+                <Heading color={"#ffffff"} size={{base: 'sm', md: 'lg'}}>{headerText}</Heading>
               </Box>
               {loading ? (<></>) : (
                 <Flex
@@ -237,8 +243,8 @@ export default function Home() {
                   textAlign={{ base: "center", md: "right" }}
                   >
                     <VStack >
-                      <Text color={"#ffffff"} fontSize={"sm"}>Available NFTs:</Text>
-                      <Text color={"#ffffff"} fontWeight={"semibold"}>{Number(candyMachine?.data.itemsAvailable) - Number(candyMachine?.itemsRedeemed)}/{Number(candyMachine?.data.itemsAvailable)}</Text>
+                      <Text color={"#ffffff"} fontSize={{base: 'xs', md: 'sm'}}>Available NFTs:</Text>
+                      <Text color={"#ffffff"} fontSize={{base: 'xs', md: 'sm'}} fontWeight={"semibold"}>{Number(candyMachine?.data.itemsAvailable) - Number(candyMachine?.itemsRedeemed)}/{Number(candyMachine?.data.itemsAvailable)}</Text>
                     </VStack>
                   </Box>
                 </Flex>
@@ -255,7 +261,7 @@ export default function Home() {
                 <Image
                   marginTop={"30"}
                   rounded={'lg'}
-                  height={250}
+                  height={{ base: "150px", md: "250px" }}
                   objectFit={'cover'}
                   alt={"project Image"}
                   src={image}
@@ -308,19 +314,19 @@ export default function Home() {
           (<>
             <br></br>
             <Center >
-              <Text fontWeight="bold" fontSize={"xl"} backgroundColor={"blackAlpha.400"}> A 5% royalty on NFT resales applies and supports Cheese. </Text>
+              <Text textAlign="center" fontWeight="bold" fontSize={"xl"} backgroundColor={"blackAlpha.400"}> A 5% royalty on NFT resales applies and supports Cheese. </Text>
             </Center>
             <br></br>
             <Center>
-                <Link backgroundColor={"blackAlpha.400"} href="https://www.solana.fm/address/4Nxcwgrs4Dm2FTHpX3F1RheFb3uetzxpayZjVaHYyE84?cluster=devnet-alpha">Click to Explore Candy Machine</Link>
+                <Link textAlign="center" backgroundColor={"blackAlpha.400"} href="https://www.solana.fm/address/4Nxcwgrs4Dm2FTHpX3F1RheFb3uetzxpayZjVaHYyE84?cluster=devnet-alpha">Click to Explore Candy Machine</Link>
             </Center>
             <br></br>
             <Center fontSize={"sm"}>
-              <Text backgroundColor={"blackAlpha.400"}> Built by our friendly Cheese Engineers and Designers with Metaplex Candy Machine. </Text>
+              <Text textAlign="center" backgroundColor={"blackAlpha.400"}> Built by our friendly Cheese Engineers and Designers with Metaplex Candy Machine. </Text>
             </Center>
             <br></br>
             <Center >
-              <Text backgroundColor={"blackAlpha.400"}> NO REFUNDS. </Text>
+              <Text textAlign="center" backgroundColor={"blackAlpha.400"}> NO REFUNDS. </Text>
             </Center>
           </>)
         }

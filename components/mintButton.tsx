@@ -535,7 +535,7 @@ export function ButtonList({
     <Box key={index} marginTop={"20px"}>
       <Divider my="10px" />
       <HStack>
-        <Heading size="lg" textTransform="uppercase">
+        <Heading fontSize={{base: 'xs', md: 'lg'}} textTransform="uppercase">
           {buttonGuard.header}
         </Heading>
         <Flex justifyContent="flex-end" marginLeft="auto">
@@ -549,7 +549,7 @@ export function ButtonList({
         </Flex>
       </HStack>
       <SimpleGrid columns={2} spacing={5}>
-        <Text pt="2" fontSize="2xl" color="#fff">
+        <Text pt="2" fontSize={{base: 'xs', md: '2xl'}}  color="#fff">
           {buttonGuard.mintText}
         </Text>
         <VStack>
@@ -591,7 +591,7 @@ export function ButtonList({
                 )
               }
               key={buttonGuard.label}
-              size="lg"
+              fontSize={{base: 'xs', md: 'lg'}} 
               color="#ffffff"
               bg="orange.500"
               borderRadius={"10"}

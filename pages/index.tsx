@@ -318,7 +318,11 @@ export default function Home() {
             </Center>
             <br></br>
             <Center>
-                <Link textAlign="center" backgroundColor={"blackAlpha.400"} href="https://www.solana.fm/address/4Nxcwgrs4Dm2FTHpX3F1RheFb3uetzxpayZjVaHYyE84?cluster=devnet-alpha">Click to Explore Candy Machine</Link>
+                <Link textAlign="center" backgroundColor={"blackAlpha.400"} href="https://www.solana.fm/address/FemTGn3aL8FMjVrQcbR1hV9L1QmfiZta7C5KSFzGw6Vr">Click to Explore Candy Machine</Link>
+            </Center>
+            <br></br>
+            <Center>
+                <Link textAlign="center" backgroundColor={"blackAlpha.400"} href="https://magiceden.us/marketplace/8tzxtMj4TNAq8GSmxwTjWAgczUR5o7xrTSNWgzH7fYX7">View the Collection</Link>
             </Center>
             <br></br>
             <Center >

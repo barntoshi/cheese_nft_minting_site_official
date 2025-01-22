@@ -539,10 +539,10 @@ export function ButtonList({
           {buttonGuard.header}
         </Heading>
         <Flex justifyContent="flex-end" marginLeft="auto">
-        {(createBigInt(1738440000) - solanaTime) > 0 ? (
+        {(createBigInt(1737590400) - solanaTime) > 0 ? (
           <NewTimer
             solanaTime={solanaTime}
-            toTime={createBigInt(1738440000)}
+            toTime={createBigInt(1737590400)}
             setCheckEligibility={setCheckEligibility}
           />
         ) : (<></>)}

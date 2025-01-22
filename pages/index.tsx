@@ -313,16 +313,12 @@ export default function Home() {
           :
           (<>
             <br></br>
-            <Center >
-              <Text textAlign="center" fontWeight="bold" fontSize={"xl"} backgroundColor={"blackAlpha.400"}> A 5% royalty on NFT resales applies and supports Cheese. </Text>
+            <Center fontSize={"sm"}>
+              <Text textAlign="center" backgroundColor={"blackAlpha.400"}> Built by our friendly Cheese Engineers and Designers with Metaplex Candy Machine. </Text>
             </Center>
             <br></br>
             <Center>
                 <Link textAlign="center" backgroundColor={"blackAlpha.400"} href="https://www.solana.fm/address/4Nxcwgrs4Dm2FTHpX3F1RheFb3uetzxpayZjVaHYyE84?cluster=devnet-alpha">Click to Explore Candy Machine</Link>
-            </Center>
-            <br></br>
-            <Center fontSize={"sm"}>
-              <Text textAlign="center" backgroundColor={"blackAlpha.400"}> Built by our friendly Cheese Engineers and Designers with Metaplex Candy Machine. </Text>
             </Center>
             <br></br>
             <Center >

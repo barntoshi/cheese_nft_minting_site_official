@@ -33,7 +33,7 @@ export function CheeseHeader() {
       >
         {/* Left side: Logo */}
         <Box>
-          <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
+          <Link as={NextLink} href="https://www.cheesescoin.com/" _hover={{ textDecoration: "none" }}>
             <Image
               src="/cheese_coin.png" // replace with your actual cheese coin logo path
               alt="Cheese Coin Logo"

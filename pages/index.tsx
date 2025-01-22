@@ -204,7 +204,7 @@ export default function Home() {
         <style jsx global>
           {`
       body {
-          background: url("/bg.png") no-repeat center center;
+          background: url("/bg.jpg") no-repeat center center;
           background-size: cover;
           background-color: rgb(231, 182, 77);
        }

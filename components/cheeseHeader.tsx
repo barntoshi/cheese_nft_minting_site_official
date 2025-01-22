@@ -24,7 +24,6 @@ export function CheeseHeader() {
       py={4}
       marginTop={"-10"}
       marginBottom={"-100"}
-      boxShadow="md"     // a small shadow under the header
     >
       <Flex
         maxW="1000"    // width container

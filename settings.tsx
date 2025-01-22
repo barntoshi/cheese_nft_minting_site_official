@@ -2,7 +2,7 @@
 // label has to be the exact same as in your candy machine config
 export const mintText = [
   { label: "WL", mintText: "WL mint paying with SOL", buttonLabel: "Mint now!", header: "WL Mint" },
-  { label: "OG", mintText: "Mint Paying with ABC", buttonLabel: "Mint now!", header: "OG Mint" },
+  { label: "OGs", mintText: "Mint (1 SOL each)", buttonLabel: "Mint now!", header: "Public Mint" },
   { label: "publi", mintText: "Mint Paying with DEF", buttonLabel: "Mint now!", header: "Public Mint" },
   { label: "default", mintText: "Mint (1 SOL each)", buttonLabel: "Mint now!", header: "Public Mint"}
 ];

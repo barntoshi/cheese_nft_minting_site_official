@@ -25,6 +25,7 @@ const WalletMultiButtonDynamic = dynamic(
   { ssr: false }
 );
 
+
 const useCandyMachine = (
   umi: Umi,
   candyMachineId: string,

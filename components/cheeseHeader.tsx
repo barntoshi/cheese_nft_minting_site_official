@@ -61,7 +61,7 @@ export function CheeseHeader() {
 
         {/* Right side: Connect Wallet Button */}
         <Box mt={{ base: 4, md: 0 }}>
-          <WalletMultiButtonDynamic />
+          {/* <WalletMultiButtonDynamic /> */}
         </Box>
       </Flex>
     </Box>
